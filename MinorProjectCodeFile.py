@@ -173,13 +173,11 @@ def analyze_relationships(valid_records):
     class_free_days = 0
     physical_mood_days = 0
     
-    positive_feelings = ['Good', 'Refreshed', 'Energetic', 'Productive', 'Relaxed']
-    
     for rec in valid_records:
         if rec['sleep'] >= 480 and rec['energy'] in ['High', 'Medium']:
             sleep_high_energy_days += 1
             
-        if rec['study'] >= 120 and rec['satisfaction'] in ['Satisfied', 'Highly Satisfied']:
+        if rec['study'] >= 120 and rec['satisfaction'] in ['Very Satisfied', 'Satisfied']:
             study_high_sat_days += 1
             
         if rec['coding'] >= 100 and rec['energy'] in ['High', 'Medium']:
@@ -188,15 +186,15 @@ def analyze_relationships(valid_records):
         if rec['class'] <= 250 and rec['free'] >= 250:
             class_free_days += 1
             
-        if rec['fitness'] >= 30 and rec['feeling'] in positive_feelings:
+        if rec['fitness'] >= 30 and rec['feeling'] in ['Excellent', 'Good']:
             physical_mood_days += 1
 
     return {
-        'sleep_energy': str(sleep_high_energy_days) + " days with >=8 hrs sleep resulted in High/Medium energy.",
-        'study_satisfaction': str(study_high_sat_days) + " days with >=2 hrs self-study resulted in Satisfied/Highly Satisfied ratings.",
-        'coding_energy': str(coding_high_energy_days) + " productive coding days (>=100 mins) occurred during High/Medium energy states.",
-        'class_load_free_time': str(class_free_days) + " days with moderate class time (<=250 mins) allowed >=250 mins of free time.",
-        'physical_activity_mood': str(physical_mood_days) + " days with >=30 mins fitness time correlated with positive day feeling ratings."
+        'sleep_energy': f"{sleep_high_energy_days} days with >=8 hrs sleep resulted in High/Medium energy.",
+        'study_satisfaction': f"{study_high_sat_days} days with >=2 hrs self-study resulted in Very Satisfied/Satisfied ratings.",
+        'coding_energy': f"{coding_high_energy_days} productive coding days (>=100 mins) occurred during High/Medium energy states.",
+        'class_load_free_time': f"{class_free_days} days with moderate class time (<=250 mins) allowed >=250 mins of free time.",
+        'physical_activity_mood': f"{physical_mood_days} days with >=30 mins fitness time correlated with positive day feelings in Excellent/Good ratings."
     }
 
 
