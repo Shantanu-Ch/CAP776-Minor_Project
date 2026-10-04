@@ -74,21 +74,19 @@ def calculate_averages(valid_records):
         return {}
 
     feeling_scores = {
-        'Refreshed': 5,
-        'Energetic': 5,
-        'Productive': 5,
+        'Excellent': 5,
         'Good': 4,
-        'Relaxed': 4,
-        'Tired': 2,
-        'Exhausted': 1
+        'Neutral': 3,
+        'Low': 2,
+        'Stressed': 1
     }
     
     satisfaction_scores = {
-        'Highly Satisfied': 5,
+        'Very Satisfied': 5,
         'Satisfied': 4,
         'Neutral': 3,
-        'Dissatisfied': 2,
-        'Highly Dissatisfied': 1
+        'Unsatisfied': 2,
+        'Very Unsatisfied': 1
     }
     
     energy_scores = {
