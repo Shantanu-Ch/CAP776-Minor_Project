@@ -203,7 +203,7 @@ def analyze_relationships(valid_records):
 def print_project_report(validation_summary, averages, indics, relationships):
 
     print("\n" + "=" * 65)
-    print("        PERSONAL ACTIVITY INTELLIGENCE REPORT (CAP776 MP#1)")
+    print("   PERSONAL ACTIVITY INTELLIGENCE REPORT (CAP776 Minor Project)")
     print("=" * 65)
       
     print("\n1. ACTIVITY DATA SUMMARY")
